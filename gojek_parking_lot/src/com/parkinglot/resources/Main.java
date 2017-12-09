@@ -7,10 +7,10 @@ import java.util.Map.Entry;
 
 public class Main {
 	static Parking parking = new Parking();
-	public static void main(String[] args)
+	public static void main(String[] args)throws Exception
 	{
 		
-		//if(args.length!=0)
+		if(args.length<1)
 		{
 			System.out.println("Type exit to quit");
 			while(true)
@@ -32,7 +32,7 @@ public class Main {
                     }
 			}
 		}
-		/*else 
+		else 
 		{
 			 File inputFile = new File(args[0]);
 		        try {
@@ -40,7 +40,7 @@ public class Main {
 		            String line;
 		            try {
 		                while ((line = br.readLine()) != null) {
-		                    Commands.Command(line.trim());
+		                    Command(line.trim());
 		                }
 		            } catch (IOException ex) {
 		                System.out.println("Error in reading the input file.");
@@ -50,7 +50,7 @@ public class Main {
 		            System.out.println("File not found in the path specified.");
 		            e.printStackTrace();
 		        }
-		}*/
+		}
 	}
 	static void Command(String command) {
 		String [] subCommands = command.split(" ");

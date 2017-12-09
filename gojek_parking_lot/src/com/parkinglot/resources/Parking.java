@@ -4,7 +4,6 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class Parking {
-	private int parkingLotSize;
 	private TreeMap<Integer,Car> parkingLot = new TreeMap<Integer,Car>();
 	private TreeSet<Integer> vacantLot = new TreeSet<Integer>();
 	//private TreeMap<String, ArrayList<Car > > colorMap = null;
@@ -13,12 +12,10 @@ public class Parking {
 		String ret = "";
 		if(parkingLotSize > 0)
 		{
-			this.parkingLotSize = parkingLotSize;
-			
 			for(int i  = 1 ; i <= parkingLotSize ; i++)
 				vacantLot.add(i);
 			//System.out.println(vacantLot.size());
-			ret = "Created​ ​a​ ​parking​ ​slot​ ​with​ ​​"+ String.valueOf(parkingLotSize) +"​ ​slots ";
+			ret = "Created a​ parking ​slot​ with​ "+ String.valueOf(parkingLotSize) +" slots ";
 		}
 		else 
 			ret = "Invalid size pf Parking lot";
@@ -35,10 +32,10 @@ public class Parking {
 				int location = vacantLot.first();
 				vacantLot.remove(location);
 				parkingLot.put(location,car);
-				ret = "Allocated​ ​slot​ ​number:​ " + String.valueOf(location);
+				ret = "Allocated slot number: " + String.valueOf(location);
 			}
 			else 
-				ret = "Sorry,​ ​parking​ ​lot​ ​is​ ​full";
+				ret = "Sorry, ​parking lot is full";
 				
 		
 		return ret;
@@ -49,7 +46,7 @@ public class Parking {
 		String ret = "";
 		vacantLot.add(location);
 		parkingLot.remove(location);
-		ret = "Slot​ ​number​ ​"+ String.valueOf(location) +"​ ​is​ ​free" ;
+		ret = "Slot number ​"+ String.valueOf(location) +"​ is free" ;
 		return ret;
 	}
 	
