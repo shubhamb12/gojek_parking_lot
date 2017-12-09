@@ -19,9 +19,7 @@ It should accept a filename as a parameter at the command prompt and read the co
 
 ###Example: File Input
 
-To run the program:
 
-$ my_program file_inputs.txt > output.txt
 
 Input (in file):
 
@@ -205,19 +203,18 @@ slot_number_for_registration_number MH-04-AY-1111
 Output:
 
 Not found
+
 #Project Requirements
 
 Latest version of JDK.
-Latest version of maven.
+
+
 #Build Instructions
 
-Run the following command -
-
-mvn clean install
 #Running the project
 
 From the project directory, run this command -
 
-   $ java -jar target/gojek-1.0.jar (Interactive command-line mode) 
+   $ java -jar target/parking_lot.jar (Interactive command-line mode) 
    
-   $ java -jar target/gojek-1.0.jar <inputfile> (File input)
+   $ java -jar target/parking_lot.jar <inputfile> (File input)
