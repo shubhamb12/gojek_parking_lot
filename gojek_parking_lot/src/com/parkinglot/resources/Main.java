@@ -54,7 +54,6 @@ public class Main {
 	}
 	static void Command(String command) {
 		String [] subCommands = command.split(" ");
-		//System.out.println(subCommands[0]);
 	
 			if( subCommands[0].equals("create_parking_lot" )) { 
 				System.out.println(parking.createParkingLot(Integer.parseInt(subCommands[1])));
@@ -67,10 +66,10 @@ public class Main {
 				System.out.println(parking.leave(Integer.parseInt(subCommands[1])));
 			}
 			else if( subCommands[0].equals("status" )) {
-				System.out.println("Slot​ ​No. Registration​ ​No Colour");
+				System.out.println("Slot No. Registration No Colour");
 				TreeMap<Integer , Car> parkingLot =  parking.status();
 				for (Entry<Integer , Car> object : parkingLot.entrySet()) {
-					System.out.println(object.getKey()+" "+object.getValue().getCarId()+" "+object.getValue().getColor());
+					System.out.println(object.getKey() + "\t"+object.getValue().getCarId() + "\t" +object.getValue().getColor());
 				}
 			}
 			else if( subCommands[0].equals("registration_numbers_for_cars_with_colour")) {

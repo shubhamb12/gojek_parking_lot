@@ -14,8 +14,7 @@ public class Parking {
 		{
 			for(int i  = 1 ; i <= parkingLotSize ; i++)
 				vacantLot.add(i);
-			//System.out.println(vacantLot.size());
-			ret = "Created a​ parking ​slot​ with​ "+ String.valueOf(parkingLotSize) +" slots ";
+			ret = "Created a parking slot with "+ String.valueOf(parkingLotSize) +" slots ";
 		}
 		else 
 			ret = "Invalid size pf Parking lot";
@@ -24,10 +23,10 @@ public class Parking {
 	
 	public String park(Car car)
 	{
-		String ret = "";
-		//System.out.println("asdsad"+car);
-		//System.out.println(vacantLot.size());
-			if(vacantLot.size()>0)
+			String ret = "";
+			if(parkingLot.containsValue(car))
+				ret = "Car is already present in the parking";
+			else if(vacantLot.size()>0)
 			{
 				int location = vacantLot.first();
 				vacantLot.remove(location);
@@ -35,7 +34,7 @@ public class Parking {
 				ret = "Allocated slot number: " + String.valueOf(location);
 			}
 			else 
-				ret = "Sorry, ​parking lot is full";
+				ret = "Sorry, parking lot is full";
 				
 		
 		return ret;
@@ -44,9 +43,14 @@ public class Parking {
 	public String leave(int location)
 	{
 		String ret = "";
+		if(vacantLot.contains(location))
+		{
+			ret = "Slot is already Empty";
+			return ret;
+		}
 		vacantLot.add(location);
 		parkingLot.remove(location);
-		ret = "Slot number ​"+ String.valueOf(location) +"​ is free" ;
+		ret = "Slot number "+ String.valueOf(location) +" is free" ;
 		return ret;
 	}
 	
