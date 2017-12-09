@@ -215,6 +215,6 @@ Latest version of JDK.
 
 From the project directory, run this command -
 
-   $ java -jar target/parking_lot.jar (Interactive command-line mode) 
-   
-   $ java -jar target/parking_lot.jar <inputfile> (File input)
+$ java -jar target/parking_lot.jar (Interactive command-line mode) 
+
+$ java -jar target/parking_lot.jar <inputfile> (File input)
